@@ -33,28 +33,21 @@
 		<hr>
 		
 		<?php
-		//jika sudah mendapatkan parameter GET id dari URL
 		if(isset($_GET['id'])){
-			//membuat variabel $id untuk menyimpan id dari GET id di URL
 			$id = $_GET['id'];
 			
-			//query ke database SELECT tabel mahasiswa berdasarkan id = $id
 			$select = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE id='$id'") or die(mysqli_error($koneksi));
 			
-			//jika hasil query = 0 maka muncul pesan error
 			if(mysqli_num_rows($select) == 0){
 				echo '<div class="alert alert-warning">ID tidak ada dalam database.</div>';
 				exit();
-			//jika hasil query > 0
 			}else{
-				//membuat variabel $data dan menyimpan data row dari query
 				$data = mysqli_fetch_assoc($select);
 			}
 		}
 		?>
 		
 		<?php
-		//jika tombol simpan di tekan/klik
 		if(isset($_POST['submit'])){
 			$nama			= $_POST['nama'];
 			$jenis_kelamin	= $_POST['jenis_kelamin'];
@@ -101,9 +94,31 @@
 				<div class="col-sm-10">
 					<select name="jurusan" class="form-control" required>
 						<option value="">PILIH JURUSAN</option>
-						<option value="TEKNIK INFORMATIKA" <?php if($data['jurusan'] == 'TEKNIK INFORMATIKA'){ echo 'selected'; } ?>>TEKNIK INFORMATIKA</option>
-						<option value="TEKNIK SIPIL" <?php if($data['jurusan'] == 'TEKNIK SIPIL'){ echo 'selected'; } ?>>TEKNIK SIPIL</option>
-						<option value="PERTANIAN" <?php if($data['jurusan'] == 'PERTANIAN'){ echo 'selected'; } ?>>PERTANIAN</option>
+
+						<option value="TI" 
+						<?php 
+						if($data['jurusan'] == '1'){ 
+							echo 'selected'; } ?>>TI</option>
+
+						<option value="SI" 
+						<?php 
+						if($data['jurusan'] == '2'){ 
+							echo 'selected'; } ?>>SI</option>
+
+						<option value="MI" 
+						<?php 
+						if($data['jurusan'] == '3'){ 
+							echo 'selected'; } ?>>MI</option>
+						
+						<option value="KA" 
+						<?php 
+						if($data['jurusan'] == '4'){ 
+							echo 'selected'; } ?>>KA</option>
+						
+						<option value="TK" 
+						<?php 
+						if($data['jurusan'] == '5'){ 
+							echo 'selected'; } ?>>TK</option>
 					</select>
 				</div>
 			</div>
