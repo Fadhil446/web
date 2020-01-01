@@ -7,7 +7,7 @@
 	
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
 			<a class="navbar-brand" href="#">WEBSITE</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,27 +97,27 @@
 
 						<option value="TI" 
 						<?php 
-						if($data['jurusan'] == '1'){ 
+						if($data['jurusan'] == 'TI'){ 
 							echo 'selected'; } ?>>TI</option>
 
 						<option value="SI" 
 						<?php 
-						if($data['jurusan'] == '2'){ 
+						if($data['jurusan'] == 'SI'){ 
 							echo 'selected'; } ?>>SI</option>
 
 						<option value="MI" 
 						<?php 
-						if($data['jurusan'] == '3'){ 
+						if($data['jurusan'] == 'MI'){ 
 							echo 'selected'; } ?>>MI</option>
 						
 						<option value="KA" 
 						<?php 
-						if($data['jurusan'] == '4'){ 
+						if($data['jurusan'] == 'KA'){ 
 							echo 'selected'; } ?>>KA</option>
 						
 						<option value="TK" 
 						<?php 
-						if($data['jurusan'] == '5'){ 
+						if($data['jurusan'] == 'TK'){ 
 							echo 'selected'; } ?>>TK</option>
 					</select>
 				</div>
