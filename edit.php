@@ -51,9 +51,9 @@
 		if(isset($_POST['submit'])){
 			$nama			= $_POST['nama'];
 			$jenis_kelamin	= $_POST['jenis_kelamin'];
-			$jurusan		= $_POST['jurusan'];
+			$idJur		= $_POST['idJur'];
 			
-			$sql = mysqli_query($koneksi, "UPDATE mahasiswa SET nama='$nama', jenis_kelamin='$jenis_kelamin', idJur='$jurusan' WHERE id='$id'") or die(mysqli_error($koneksi));
+			$sql = mysqli_query($koneksi, "UPDATE mahasiswa SET nama='$nama', jenis_kelamin='$jenis_kelamin', idJur='$idJur' WHERE id='$id'") or die(mysqli_error($koneksi));
 			
 			if($sql){
 				echo '<script>alert("Berhasil menyimpan data."); document.location="edit.php?id='.$id.'";</script>';
@@ -90,34 +90,34 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">JURUSAN</label>
+				<label class="col-sm-2 col-form-label">Jurusan</label>
 				<div class="col-sm-10">
-					<select name="jurusan" class="form-control" required>
+					<select name="idJur" class="form-control" required>
 						<option value="">PILIH JURUSAN</option>
 
 						<option value="TI" 
 						<?php 
-						if($data['jurusan'] == '1'){ 
+						if($data['idJur'] == '1'){ 
 							echo 'selected'; } ?>>TI</option>
 
 						<option value="SI" 
 						<?php 
-						if($data['jurusan'] == '2'){ 
+						if($data['idJur'] == '2'){ 
 							echo 'selected'; } ?>>SI</option>
 
 						<option value="MI" 
 						<?php 
-						if($data['jurusan'] == '3'){ 
+						if($data['idJur'] == '3'){ 
 							echo 'selected'; } ?>>MI</option>
 						
 						<option value="KA" 
 						<?php 
-						if($data['jurusan'] == '4'){ 
+						if($data['idJur'] == '4'){ 
 							echo 'selected'; } ?>>KA</option>
 						
 						<option value="TK" 
 						<?php 
-						if($data['jurusan'] == '5'){ 
+						if($data['idJur'] == '5'){ 
 							echo 'selected'; } ?>>TK</option>
 					</select>
 				</div>

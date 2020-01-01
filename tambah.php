@@ -40,12 +40,12 @@
 			$nim			= $_POST['nim'];
 			$nama			= $_POST['nama'];
 			$jenis_kelamin	= $_POST['jenis_kelamin'];
-			$jurusan		= $_POST['jurusan'];
+			$idJur		= $_POST['idJur'];
 			
 			$cek = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='$nim'") or die(mysqli_error($koneksi));
 			
 			if(mysqli_num_rows($cek) == 0){
-				$sql = mysqli_query($koneksi, "INSERT INTO mahasiswa(nim, nama, jenis_kelamin, idJur) VALUES('$nim', '$nama', '$jenis_kelamin', '$jurusan')") or die(mysqli_error($koneksi));
+				$sql = mysqli_query($koneksi, "INSERT INTO mahasiswa(nim, nama, jenis_kelamin, idJur) VALUES('$nim', '$nama', '$jenis_kelamin', '$idJur')") or die(mysqli_error($koneksi));
 				
 				if($sql){
 					echo '<script>alert("Berhasil menambahkan data."); document.location="tambah.php";</script>';
@@ -87,8 +87,8 @@
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">JURUSAN</label>
 				<div class="col-sm-10">
-					<select name="jurusan" class="form-control" required>
-						<option value="">PILIH JURUSAN</option>
+					<select name="idJur" class="form-control" required>
+						<option value="">PILIH idJur</option>
 						<option value="1">TI</option>
 						<option value="2">SI</option>
 						<option value="3">MI</option>
