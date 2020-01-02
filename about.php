@@ -36,9 +36,9 @@
 		<hr>
 		<form>
 			<ul>
-                <li>M. Fadhil Jamaluddin</li>
-                <li>Ahmad Renaldi</li>
-                <li>Tia Indiani Astuti</li>
+                <li>[175410023] M. Fadhil Jamaluddin </li>
+                <li>[175410053] Ahmad Renaldi </li>
+                <li>[175410042] Tia Indiani Astuti </li>
             </ul>
 		</form>
 		
